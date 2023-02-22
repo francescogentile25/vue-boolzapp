@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+
+.background-green{
+    height: 10vh;
+    background-color:#009688;
+}
+.background-grey{
+    height: 90vh;
+    background-color: #DBDBD2;
+}
+
+.page{
+    min-height: 700px;
+    background-color: cornflowerblue;
+    position: fixed;
+    top :30px;
+    left: 200px;
+    right: 200px;
+    z-index: 999;
+
+}
+
+.prova-1{
+    background-color: blue;
+    /* min-height: 700px; */
+}
+
+.main-content{
+    position: relative;
+    background-color: red;
+    min-height: 700px;
+}
+
+.main-content-header{
+    background-color: #EAEAEA;
+}
+
+.main-content-footer{
+    background-color: #EAEAEA;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
