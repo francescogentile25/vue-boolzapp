@@ -6,7 +6,15 @@
 img{
     max-width: 100%;
 }
+p{
+    margin-bottom: 0;
+}
 
+li, ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
 .background-green{
     height: 10vh;
     background-color:#009688;
@@ -27,14 +35,14 @@ img{
 
 }
 
-.prova-1{
-    background-color: blue;
+.aside{
+    background-color:white
     /* min-height: 700px; */
 }
 
 .main-content{
     position: relative;
-    background-color: red;
+    background-image: url(../img/background.jpg);
     min-height: 700px;
 }
 
@@ -47,4 +55,26 @@ img{
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+.aside-header{
+    background-color: #EAEAEA;
+}
+
+.notification{
+    background-color:#8EDAFC
+}
+
+.notification-icon{
+    color:#8EDAFC
+}
+
+.message-in{
+    background-color:#D5F9BA;
+    max-width:45%;
+}
+
+.message-out{
+    background-color: white;
+    max-width:45%;
 }
