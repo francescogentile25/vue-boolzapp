@@ -25,7 +25,6 @@ li, ul{
 }
 
 .page{
-    min-height: 700px;
     background-color: cornflowerblue;
     position: fixed;
     top :30px;
@@ -37,13 +36,12 @@ li, ul{
 
 .aside{
     background-color:white
-    /* min-height: 700px; */
 }
 
 .main-content{
     position: relative;
     background-image: url(../img/background.jpg);
-    min-height: 700px;
+    min-height: 900px;
 }
 
 .main-content-header{
