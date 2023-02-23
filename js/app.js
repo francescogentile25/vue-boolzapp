@@ -180,14 +180,14 @@ createApp({
 			if (inputText === ''){
 				return
 			}
-			this.contacts[this.currentUser].messages.push({date: 00-00-00, message:this.inputValue,status:'sent'})
+            this.contacts[this.currentUser].messages.push({date: 00-00-00, message: inputText,status:'sent'})
 			this.inputValue = ''
             this.answer()
-		},
+        },
         answer(){
                 setTimeout(() => {
-                    ( this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'}), 2000)
-                }, 1000);
+                    this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'})
+                }, 2000);
         },
     },
 }).mount('#app');

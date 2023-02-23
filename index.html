@@ -87,12 +87,22 @@
                     </div>
                     <div class="row main-content-body">
                         <div class="col d-flex flex-column mt-2" >
-                            <div class="message-sent rounded-pill p-2 align-self-end"    v-for="user in contacts[currentUser].messages">
+                            <ul class="chat">
+                                <li class="message sent" v-for=" user in contacts[currentUser].messages">
+                                    <p> contacts[3].status === 'sent' ? '{{user.message}}' : ''</p>
+                                    <span class="time"> 15:30 </span>
+                                </li>
+                                <li class="message received" v-for=" user in contacts[currentUser].messages">
+                                    {{user.message}}
+                                    <span class="time"> 15:41 </span>
+                                </li>
+                            </ul>
+                            <!-- <div class="message-sent rounded-pill p-2 align-self-end"    v-for="user in contacts[currentUser].messages">
                                 <p>{{user.message}}</p>
                             </div>
                             <div class="message-received rounded-pill p-2"   v-for="user in contacts[currentUser].messages">
                                 <p>{{user.message}}</p>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="row main-content-footer">
