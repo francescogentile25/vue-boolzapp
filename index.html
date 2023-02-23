@@ -56,7 +56,7 @@
                     </div>
                     <div class="aside-main">
                         <ul>
-                            <li v-for="(people, index) in contacts">
+                            <li v-for="(people, index) in contacts"  @click="setCurrentuser(index)">
                                 <div class="user-chat d-flex my-3">
                                     <div class="user-image">
                                         <img class="me-3" :src="people.avatar" alt="">
@@ -89,14 +89,12 @@
                         </div>
                     </div>
                     <div class="row main-content-body">
-                        <div class="col d-flex flex-column mt-2">
-                            <div class="message-in rounded-pill p-2 align-self-end">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.quod exercitationem
-                                    voluptatum?</p>
+                        <div class="col d-flex flex-column mt-2" >
+                            <div class="message-sent rounded-pill p-2 align-self-end" v-for="user in contacts[currentUser].messages">
+                                <p>{{user.message}}</p>
                             </div>
-                            <div class="message-out rounded-pill p-2">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam nisi neque optio
-                                    doloribus?</p>
+                            <div class="message-received rounded-pill p-2" v-for="message in contacts[0].messages">
+                                <p>{{message.message}}</p>
                             </div>
                         </div>
                     </div>

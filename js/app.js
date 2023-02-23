@@ -166,7 +166,13 @@ createApp({
                         }
                     ],
                 }
-            ]
-        }
-    }
+            ],
+            currentUser : 0,
+        };
+    },
+    methods:{
+        setCurrentuser(currentUser){
+            this.currentUser = currentUser
+        },
+    },
 }).mount('#app');

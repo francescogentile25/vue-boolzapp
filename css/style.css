@@ -67,12 +67,12 @@ li, ul{
     color:#8EDAFC
 }
 
-.message-in{
+.message-sent{
     background-color:#D5F9BA;
     max-width:45%;
 }
 
-.message-out{
+.message-received{
     background-color: white;
     max-width:45%;
 }
