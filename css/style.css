@@ -76,6 +76,7 @@ li, ul{
 }
 
 .message.sent {
+    align-self: flex-end;
     max-width:45%;
 	background-color: #d5f9ba;;
 }

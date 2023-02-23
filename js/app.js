@@ -172,6 +172,7 @@ createApp({
         };
     },
     methods:{
+        
         setCurrentuser(currentUser){
             this.currentUser = currentUser
         },
@@ -181,6 +182,7 @@ createApp({
 				return
 			}
             this.contacts[this.currentUser].messages.push({date: 00-00-00, message: inputText,status:'sent'})
+            console.log(this.contacts[this.currentUser].messages)
 			this.inputValue = ''
             this.answer()
         },
@@ -189,5 +191,19 @@ createApp({
                     this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'})
                 }, 2000);
         },
+        deleteMessage(){
+            this.contacts[this.currentUser].messages.pop()
+            // this.contacts[this.currentUser].messages.splice(index) utile per funzioen svuota chat 
+        },
+        // deleteAll(index){
+        //     this.contacts[this.currentUser].messages.splice(index) utile per funzioen svuota chat 
+        // },
+        //v-for="(message, messageIndex) in contacts[currentUser].messages" v for per eliminare tutti i mess da mettere nella li del drop down 
     },
 }).mount('#app');
+
+
+// prendere la parola
+// spezza le varie lettere e le divide .split ??
+// if lettera inserita === array parola spezzetata ===true ( fa vedere le persone che hanno quella lettera)
+
