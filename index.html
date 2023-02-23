@@ -44,8 +44,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="serch-message my-3">
-                            <input type="text" placeholder="cerca il tuo mess" class="rounded-pill w-100">
+                        <div class="input-group  rounded-pill my-2">
+                            <span class="input-group-text bg-white  border-white" id="basic-addon1">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </span>
+                            <input type="text" class="form-control border-white" placeholder="cerca il tuo mess" aria-label="Username" aria-describedby="basic-addon1">
                         </div>
                     </div>
                     <div class="aside-main">
@@ -84,7 +87,7 @@
                     </div>
                     <div class="row main-content-body">
                         <div class="col d-flex flex-column mt-2" >
-                            <div class="message-sent rounded-pill p-2 align-self-end"   v-if="contacts[currentUser].status === 'sent'" v-for="user in contacts[currentUser].messages">
+                            <div class="message-sent rounded-pill p-2 align-self-end"    v-for="user in contacts[currentUser].messages">
                                 <p>{{user.message}}</p>
                             </div>
                             <div class="message-received rounded-pill p-2"   v-for="user in contacts[currentUser].messages">
@@ -97,8 +100,9 @@
                             <div class="emoji fs-5">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
-                            <input class="flex-grow-1 rounded-pill mx-3" type="text" placeholder="Scrivi un mess..." @keydown.enter="addMessage" v-model="inputValue">
-                            <div class="mic fs-5">
+                            <input class="flex-grow-1 rounded-pill mx-3 p-2" type="text" placeholder="Scrivi un mess..." @keydown.enter="addMessage" v-model="inputValue">
+                            <div class="fs-5">
+                                <i class="fa-solid fa-paper-plane mx-2"  @click="addMessage"></i>
                                 <i class="fa-solid fa-microphone"></i>
                             </div>
                         </div>
