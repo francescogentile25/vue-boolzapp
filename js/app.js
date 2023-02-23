@@ -182,10 +182,12 @@ createApp({
 			}
 			this.contacts[this.currentUser].messages.push({date: 00-00-00, message:this.inputValue,status:'sent'})
 			this.inputValue = ''
-            return this.replay()
+            this.answer()
 		},
-        replay(){
-            setTimeout( this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'}), 2000)
+        answer(){
+                setTimeout(() => {
+                    ( this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'}), 2000)
+                }, 1000);
         },
     },
 }).mount('#app');
