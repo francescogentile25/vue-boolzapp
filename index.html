@@ -87,13 +87,14 @@
                     </div>
                     <div class="row main-content-body">
                         <div class="col d-flex flex-column mt-2" >
-                            <ul class="chat">
-                                <li class="message sent" v-for=" user in contacts[currentUser].messages">
-                                    <p> contacts[3].status === 'sent' ? '{{user.message}}' : ''</p>
+                            <ul class="chat" v-for=" user in contacts[currentUser].messages">
+                                <li class="message sent" :class="user.status === 'received' ? 'd-none' : 'd-block'">
+                                    <p>{{user.message}} </p>
                                     <span class="time"> 15:30 </span>
                                 </li>
-                                <li class="message received" v-for=" user in contacts[currentUser].messages">
-                                    {{user.message}}
+                                <li class="message received"  :class="user.status === 'sent' ? 'd-none' : 'd-block'">
+                                    <p>{{user.message}} </p>
+                                    <!-- {{user.status === 'received' ? user.message : ''}} -->
                                     <span class="time"> 15:41 </span>
                                 </li>
                             </ul>

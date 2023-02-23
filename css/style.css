@@ -62,6 +62,7 @@ li, ul{
 }
 
 .message {
+    margin: 7px;
 	position: relative;
 	border-radius: 12px;
 	padding: 16px;
