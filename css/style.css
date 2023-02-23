@@ -15,24 +15,18 @@ li, ul{
     margin: 0;
     padding: 0;
 }
-.background-green{
-    height: 10vh;
-    background-color:#009688;
-}
-.background-grey{
-    height: 90vh;
-    background-color: #DBDBD2;
+
+#app{
+    height: 100vh;
+    padding: 40px;
+    background: linear-gradient(
+        to top,
+        #D7DBD6 85%,
+        #009688 85%,
+        #009688 100%
+    );
 }
 
-.page{
-    background-color: cornflowerblue;
-    position: fixed;
-    top :30px;
-    left: 200px;
-    right: 200px;
-    z-index: 999;
-
-}
 
 .aside{
     background-color:white
@@ -40,7 +34,7 @@ li, ul{
 
 .main-content{
     position: relative;
-    background-image: url(../img/background.jpg);
+    background-image: url(https://i.pinimg.com/originals/ab/ab/60/abab60f06ab52fa7846593e6ae0c9a0b.png);
     min-height: 900px;
 }
 

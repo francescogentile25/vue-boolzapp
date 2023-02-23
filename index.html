@@ -16,12 +16,6 @@
 </head>
 <body>
     <div id="app">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="background-green"></div>
-                <div class="background-grey"></div>
-            </div>
-        </div>
         <div class="container page">
             <div class="row">
                 <div class="col-3 aside">
@@ -90,10 +84,10 @@
                     </div>
                     <div class="row main-content-body">
                         <div class="col d-flex flex-column mt-2" >
-                            <div class="message-sent rounded-pill p-2 align-self-end" v-if="contacts[currentUser].status === 'sent'" v-for="user in contacts[currentUser].messages">
+                            <div class="message-sent rounded-pill p-2 align-self-end"   v-if="contacts[currentUser].status === 'sent'" v-for="user in contacts[currentUser].messages">
                                 <p>{{user.message}}</p>
                             </div>
-                            <div class="message-received rounded-pill p-2"  v-if="contacts[currentUser].status === 'received'" v-for="user in contacts[currentUser].messages">
+                            <div class="message-received rounded-pill p-2"   v-for="user in contacts[currentUser].messages">
                                 <p>{{user.message}}</p>
                             </div>
                         </div>
@@ -103,7 +97,7 @@
                             <div class="emoji fs-5">
                                 <i class="fa-regular fa-face-smile"></i>
                             </div>
-                            <input class="flex-grow-1 rounded-pill mx-3" type="text" placeholder="Scrivi un mess...">
+                            <input class="flex-grow-1 rounded-pill mx-3" type="text" placeholder="Scrivi un mess..." @keydown.enter="addMessage" v-model="inputValue">
                             <div class="mic fs-5">
                                 <i class="fa-solid fa-microphone"></i>
                             </div>

@@ -168,11 +168,20 @@ createApp({
                 }
             ],
             currentUser : 0,
+            inputValue: '',
         };
     },
     methods:{
         setCurrentuser(currentUser){
             this.currentUser = currentUser
         },
+        addMessage() {
+			let inputText = this.inputValue.trim()
+			if (inputText === ''){
+				return
+			}
+			this.contacts[this.currentUser].messages.push({date: 00-00-00, message:this.inputValue,status:'sent'})
+			this.inputValue = ''
+		},
     },
 }).mount('#app');
