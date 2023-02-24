@@ -169,14 +169,19 @@ createApp({
                 }
             ],
             currentUser : 0,
+            currentMessage : 0,
             inputValue: '',
-            now: DateTime.now().toFormat('HH:mm'),
+            lastLogin: DateTime.now().toFormat('HH:mm'),
+            now: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
         };
     },
     methods:{
         
         setCurrentuser(currentUser){
             this.currentUser = currentUser
+        },
+        setCurrentMessage(CurrentMessage){
+            this.CurrentMessage = CurrentMessage
         },
         addMessage() {
 			let inputText = this.inputValue.trim()
@@ -202,7 +207,7 @@ createApp({
         },
         time(dateString) {
             const dateTime = DateTime.fromFormat(dateString, "dd/MM/yyyy HH:mm:ss");
-            return dateTime.toFormat("HH:mm:ss");
+            return dateTime.toFormat("HH:mm");
         },
     },
 }).mount('#app');
