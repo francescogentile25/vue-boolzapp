@@ -1,5 +1,6 @@
 const { createApp } = Vue; //Vue
 //App
+const {DateTime} = luxon
 createApp({
     data() {
         return {
@@ -169,6 +170,7 @@ createApp({
             ],
             currentUser : 0,
             inputValue: '',
+            now: DateTime.now().toFormat('HH:mm'),
         };
     },
     methods:{
@@ -181,24 +183,27 @@ createApp({
 			if (inputText === ''){
 				return
 			}
-            this.contacts[this.currentUser].messages.push({date: 00-00-00, message: inputText,status:'sent'})
+            this.contacts[this.currentUser].messages.push({date: this.now, message: inputText,status:'sent'})
             console.log(this.contacts[this.currentUser].messages)
 			this.inputValue = ''
             this.answer()
         },
         answer(){
                 setTimeout(() => {
-                    this.contacts[this.currentUser].messages.push({date: 00-00-00, message:'ok',status:'received'})
+                    this.contacts[this.currentUser].messages.push({date: this.now, message:'Lol',status:'received'})
                 }, 2000);
         },
         deleteMessage(){
             this.contacts[this.currentUser].messages.pop()
             // this.contacts[this.currentUser].messages.splice(index) utile per funzioen svuota chat 
         },
-        // deleteAll(index){
-        //     this.contacts[this.currentUser].messages.splice(index) utile per funzioen svuota chat 
-        // },
-        //v-for="(message, messageIndex) in contacts[currentUser].messages" v for per eliminare tutti i mess da mettere nella li del drop down 
+        deleteAll(){
+            this.contacts[this.currentUser].messages.splice(0, this.contacts[this.currentUser].messages.length )
+        },
+        time(dateString) {
+            const dateTime = DateTime.fromFormat(dateString, "dd/MM/yyyy HH:mm:ss");
+            return dateTime.toFormat("HH:mm:ss");
+        },
     },
 }).mount('#app');
 
