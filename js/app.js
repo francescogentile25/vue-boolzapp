@@ -1,6 +1,6 @@
 const { createApp } = Vue; //Vue
 //App
-const {DateTime} = luxon
+const { DateTime } = luxon
 createApp({
     data() {
         return {
@@ -168,42 +168,42 @@ createApp({
                     ],
                 }
             ],
-            currentUser : 0,
-            currentMessage : 0,
+            currentUser: 0,
+            currentMessage: 0,
             inputValue: '',
             lastLogin: DateTime.now().toFormat('HH:mm'),
             now: DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'),
         };
     },
-    methods:{
-        
-        setCurrentuser(currentUser){
+    methods: {
+
+        setCurrentuser(currentUser) {
             this.currentUser = currentUser
         },
-        setCurrentMessage(CurrentMessage){
+        setCurrentMessage(CurrentMessage) {
             this.CurrentMessage = CurrentMessage
         },
         addMessage() {
-			let inputText = this.inputValue.trim()
-			if (inputText === ''){
-				return
-			}
-            this.contacts[this.currentUser].messages.push({date: this.now, message: inputText,status:'sent'})
+            let inputText = this.inputValue.trim()
+            if (inputText === '') {
+                return
+            }
+            this.contacts[this.currentUser].messages.push({ date: this.now, message: inputText, status: 'sent' })
             console.log(this.contacts[this.currentUser].messages)
-			this.inputValue = ''
+            this.inputValue = ''
             this.answer()
         },
-        answer(){
-                setTimeout(() => {
-                    this.contacts[this.currentUser].messages.push({date: this.now, message:'Lol',status:'received'})
-                }, 2000);
+        answer() {
+            setTimeout(() => {
+                this.contacts[this.currentUser].messages.push({ date: this.now, message: 'Ok', status: 'received' })
+            }, 2000);
         },
-        deleteMessage(){
+        deleteMessage() {
             this.contacts[this.currentUser].messages.pop()
             // this.contacts[this.currentUser].messages.splice(index) utile per funzioen svuota chat 
         },
-        deleteAll(){
-            this.contacts[this.currentUser].messages.splice(0, this.contacts[this.currentUser].messages.length )
+        deleteAll() {
+            this.contacts[this.currentUser].messages.splice(0, this.contacts[this.currentUser].messages.length)
         },
         time(dateString) {
             const dateTime = DateTime.fromFormat(dateString, "dd/MM/yyyy HH:mm:ss");
@@ -211,9 +211,3 @@ createApp({
         },
     },
 }).mount('#app');
-
-
-// prendere la parola
-// spezza le varie lettere e le divide .split ??
-// if lettera inserita === array parola spezzetata ===true ( fa vedere le persone che hanno quella lettera)
-
